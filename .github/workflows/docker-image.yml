@@ -17,6 +17,11 @@ jobs:
       with:
         path: services
 
+    - uses: actions/checkout@v4
+      with:
+        repository: roberto0arruda/ci-service-poc-2
+        path: boletos
+
     - run: ls -la
     - name: Build the Docker image
       run: docker build . --file ./services/Dockerfile --tag my-image-name:$(date +%s)
